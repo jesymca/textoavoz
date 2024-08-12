@@ -44,5 +44,10 @@ Este script te permite convertir texto a audio en español de forma sencilla.
 
 **Instalación:**
 
-1. **Ejecuta el script `install.sh`:**
-2. **Ejecuta el script `textavoz.sh`:**
+1. **Clonar el repositorio `git clone https://github.com/jesymca/textoavoz.git`**
+2. **Ejecuta el script `install.sh`:**
+3. **Ejecuta el script `textavoz.sh`:**
+4. **Escribrir el nombre que van a tener los archivos, escriba solo el nombre**
+5. **Editar contenido del archivo de texo que tiene el nombre que se creo en el paso 4**
+6. **Guardar y cerrar ventana de edicion de texto**
+7. **El programa va a crear un archivo `.mp3` que contiene el archivo de audio**
