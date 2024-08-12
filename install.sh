@@ -1,54 +1,34 @@
 #!/bin/bash
 
-# Verifica si se está ejecutando en Ubuntu o Debian
-if [[ "$(lsb_release -is)" == "Ubuntu" || "$(lsb_release -is)" == "Debian" ]]; then
-  # Instala Python 3 y pip en Ubuntu/Debian
-  sudo apt-get update
-  sudo apt-get install python3 python3-pip
-else
-  # Instala Python 3 y pip en Arch Linux
-  sudo pacman -S python3 python3-pip
-fi
+# Función para instalar paquetes con el administrador de paquetes actual
+install_package() {
+  local package_name="$1"
+  if [[ "$(command -v apt-get)" ]]; then
+    sudo apt-get update
+    sudo apt-get install -y "$package_name"
+  elif [[ "$(command -v yum)" ]]; then
+    sudo yum install -y "$package_name"
+  elif [[ "$(command -v dnf)" ]]; then
+    sudo dnf install -y "$package_name"
+  elif [[ "$(command -v pacman)" ]]; then
+    sudo pacman -S "$package_name"
+  else
+    echo "Error: No se encontró un administrador de paquetes compatible."
+    exit 1
+  fi
+}
+
+# Instala Python 3 y pip
+install_package python3 python3-pip
 
 # Instala gTTS
 sudo pip3 install gTTS
 
 # Instala un reproductor multimedia (puedes elegir uno)
-# Para VLC:
-if [[ "$(lsb_release -is)" == "Ubuntu" || "$(lsb_release -is)" == "Debian" ]]; then
-  sudo apt-get install vlc
-else
-  sudo pacman -S vlc
-fi
-
-# Para MPV:
-if [[ "$(lsb_release -is)" == "Ubuntu" || "$(lsb_release -is)" == "Debian" ]]; then
-  sudo apt-get install mpv
-else
-  sudo pacman -S mpv
-fi
-
-# Para mplayer:
-if [[ "$(lsb_release -is)" == "Ubuntu" || "$(lsb_release -is)" == "Debian" ]]; then
-  sudo apt-get install mplayer
-else
-  sudo pacman -S mplayer
-fi
+install_package vlc
 
 # Instala un editor de texto (puedes elegir uno)
-# Para gedit:
-if [[ "$(lsb_release -is)" == "Ubuntu" || "$(lsb_release -is)" == "Debian" ]]; then
-  sudo apt-get install gedit
-else
-  sudo pacman -S gedit
-fi
-
-# Para nano:
-if [[ "$(lsb_release -is)" == "Ubuntu" || "$(lsb_release -is)" == "Debian" ]]; then
-  sudo apt-get install nano
-else
-  sudo pacman -S nano
-fi
+install_package gedit
 
 # Hacer el script ejecutable
 chmod +x textoavoz.sh

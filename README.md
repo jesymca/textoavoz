@@ -1,6 +1,35 @@
 # Textoavoz
 Script para pasar de Texto a Voz solo usando Python
 
+## Compatibilidad
+Script se ha realizado para que sea compatible con diversos sistemas operativos LINUX
+
+**Sistemas:**
+
+* Debian-based:
+	* Debian
+	* Ubuntu
+	* Linux Mint
+	* Elementary OS
+	* Pop!_OS
+	* Raspbian
+	* Otras distribuciones basadas en Debian
+* Red Hat-based:
+	* Red Hat Enterprise Linux (RHEL)
+	* CentOS
+	* Fedora
+	* Scientific Linux
+	* Otras distribuciones basadas en Red Hat
+* Arch Linux-based:
+	* Arch Linux
+	* Manjaro
+	* Antergos
+	* Otras distribuciones basadas en Arch Linux
+
+## Nota:
+* El script solo es compatible con los sistemas operativos que usan los administradores de paquetes que se verifican: apt-get, yum, dnf y pacman.
+* Si estás usando una distribución de Linux que no utiliza ninguno de estos administradores de paquetes, el script no funcionará.
+
 
 ## Conversor de Texto a Voz
 
