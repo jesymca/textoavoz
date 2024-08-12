@@ -1,3 +1,7 @@
+# Contactarse con el creador
+# Correo: herrejose@gmail.com
+# Telegram: https://t.me/Jesymca
+
 from gtts import gTTS
 import subprocess
 import os

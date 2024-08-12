@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Contactarse con el creador
+# Correo: herrejose@gmail.com
+# Telegram: https://t.me/Jesymca
+
+
 # Pedir el nombre del archivo al usuario
 read -p "Introduce el nombre del archivo de texto: " nombre_archivo
 

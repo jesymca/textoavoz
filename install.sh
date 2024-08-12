@@ -1,4 +1,7 @@
 #!/bin/bash
+# Contactarse con el creador
+# Correo: herrejose@gmail.com
+# Telegram: https://t.me/Jesymca
 
 # Función para instalar paquetes con el administrador de paquetes actual
 install_package() {
