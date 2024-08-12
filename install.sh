@@ -24,8 +24,18 @@ install_package() {
 # Instala Python 3 y pip
 install_package python3 python3-pip
 
-# Instala gTTS
-sudo pip3 install gTTS
+
+# Crea el entorno virtual
+python3 -m venv my_env  # Crea el entorno virtual "my_env"
+
+# Activa el entorno virtual
+source my_env/bin/activate
+
+# Verificar si gTTS ya está instalado
+if ! pip3 show gTTS > /dev/null 2>&1; then
+  # Instala gTTS si no está instalado
+  pip3 install -q gTTS 
+fi
 
 # Instala un reproductor multimedia (puedes elegir uno)
 install_package vlc
